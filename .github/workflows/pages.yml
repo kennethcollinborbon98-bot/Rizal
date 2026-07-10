@@ -21,9 +21,10 @@ jobs:
         uses: actions/configure-pages@v4
 
       - name: Upload Pages Artifact
-        uses: actions/upload-pages-artifact@v2
+        # use v3 which no longer depends on deprecated upload-artifact v3
+        uses: actions/upload-pages-artifact@v3
         with:
           path: '.'
 
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4
